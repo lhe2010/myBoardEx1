@@ -1,16 +1,14 @@
-package step3_01_boardEx;
-
-import java.sql.Date;
+package step3_01_boardEx1;
 
 public class BoardDTO {
-	public int num;
-	public String writer;
-	public String email;
-	public String subject;
-	public String password;
-	public String reg_date;
-	public int read_count;
-	public String content;
+	private int num;
+	private String writer;
+	private String email;
+	private String subject;
+	private String password;
+	private String reg_date;
+	private int read_count;
+	private String content;
 	
 	public int getNum() {
 		return num;
@@ -61,4 +59,10 @@ public class BoardDTO {
 		this.content = content;
 	}
 	
+	@Override
+	public String toString() {
+		return "BoardDTO [num=" + num + ", writer=" + writer + ", email=" + email + ", subject=" + subject
+				+ ", password=" + password + ", reg_date=" + reg_date + ", read_count=" + read_count + ", content="
+				+ content + "]";
+	}
 }

@@ -1,6 +1,6 @@
 <%@page import="java.util.Vector"%>
-<%@page import="step3_01_boardEx.BoardDAO"%>
-<%@page import="step3_01_boardEx.BoardDTO"%>
+<%@page import="step3_01_boardEx1.BoardDAO"%>
+<%@page import="step3_01_boardEx1.BoardDTO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -15,7 +15,7 @@
 		<table class="table table-striped table-hover">
 	  		<thead>
 	  			<tr>
-	  				<th>번호</th>
+	  				<th>글번호</th>
 	  				<th>제목</th>
 	  				<th>작성자</th>
 	  				<th>작성일</th>
@@ -28,11 +28,12 @@
 			BoardDTO bean = vec.get(i);
 	%>
 			<tr>
-				<td><%=i+1 %></td>
-				<td><a href="05_bInfo.jsp?<%=bean.getNum()%>"><%=bean.subject %></a></td>
-				<td><%=bean.writer %></td>
-				<td><%=bean.reg_date %></td>
-				<td><%=bean.read_count %></td>
+<%-- 				<td><%=i+1 %></td> --%>
+				<td><%=bean.getNum() %></td>
+				<td><a href="05_bInfo.jsp?num=<%=bean.getNum()%>"><%=bean.getSubject() %></a></td>
+				<td><%=bean.getWriter() %></td>
+				<td><%=bean.getReg_date() %></td>
+				<td><%=bean.getRead_count() %></td>
 			</tr>
 	<%
 		}
@@ -40,7 +41,7 @@
 		</table>
 	</div>
 	<div align="right">
-		<input type="button" value="글쓰기" class="btn btn-secondary" onclick="location.href='01_main.jsp'">
+		<input type="button" value="글쓰기" class="btn btn-secondary" onclick="location.href='02_bWrite.jsp'">
 	</div>
 
 </body>
